@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="90.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="1695.0" style="-fx-background-color: #283046; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AccountRowController">
+   <children>
+      <Label fx:id="levelTrackLabel" cacheShape="false" centerShape="false" contentDisplay="GRAPHIC_ONLY" disable="true" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" scaleShape="false" text="1234" visible="false">
+         <font>
+            <Font size="1.0" />
+         </font>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <StackPane>
+         <children>
+            <ImageView fx:id="borderImage" fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://d15f34w2p8l1cc.cloudfront.net/overwatch/9e8600f97ea4a84d822d8b336f2b1dbfe7372fb9f2b6bf1d0336193567f6f943.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="starImage" fitHeight="50.0" fitWidth="100.0" scaleX="0.7" scaleY="0.7" translateY="22.0">
+               <image>
+                  <Image url="https://d15f34w2p8l1cc.cloudfront.net/overwatch/cd877430ccc400c10e24507dba972e24a4543edc05628045300f1349cf003f3a.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="levelLabel" text="77" textFill="#d0d2d6">
+               <font>
+                  <Font name="Koverwatch" size="26.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="-30.0" />
+         </padding>
+      </StackPane>
+      <Label fx:id="battleTagLabel" graphicTextGap="10.0" prefHeight="60.0" prefWidth="447.0" text="ŞŢĮĶĮŞÞŲMƐ69#1219" textFill="#d0d2d6" HBox.hgrow="ALWAYS">
+         <font>
+            <Font name="Koverwatch" size="44.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="portraitImage" fitHeight="80.0" fitWidth="80.0">
+               <image>
+                  <Image url="https://d15f34w2p8l1cc.cloudfront.net/overwatch/190aa6150e33690e39a9c91308d5da9b2e262262657af26579b95e939c44d5ad.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets top="-20.0" />
+         </padding>
+      </Label>
+      <Label fx:id="errorLabel" contentDisplay="TEXT_ONLY" focusTraversable="false" text="error&#10;" textFill="RED" textOverrun="CLIP" visible="false" wrapText="true" HBox.hgrow="NEVER">
+         <HBox.margin>
+            <Insets left="20.0" top="-20.0" />
+         </HBox.margin>
+      </Label>
+      <BorderPane maxWidth="1.7976931348623157E308" HBox.hgrow="SOMETIMES">
+         <right>
+            <GridPane alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" minWidth="700.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" minWidth="215.0" spacing="10.0" style="-fx-background-color: #161E31; -fx-background-radius: 15;">
+                     <children>
+                        <SVGPath content="m5.4398 34.59v-24.069c0-3.8588 8.0447-8.9157 24.723-8.9157 16.678 0 24.723 5.0568 24.723 8.9157v24.069c0 5.821-19.817 24.133-24.723 24.133-4.9053 0-24.723-18.312-24.723-24.133z" fill="WHITE" scaleX="0.6" scaleY="0.6" />
+                        <Label fx:id="tankRankLabel" text="3918" textFill="WHITE">
+                           <graphic>
+                              <ImageView fx:id="tankRankImage" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="20.0">
+                                 <image>
+                                    <Image url="https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-MasterTier.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Koverwatch" size="45.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" minWidth="215.0" spacing="10.0" style="-fx-background-color: #161E31; -fx-background-radius: 15;" GridPane.columnIndex="1">
+                     <children>
+                        <SVGPath content="m36.451 58.73v-9.6006h-12.577v9.6006zm0-12.997v-34.224c0-5.2977-5.0459-9.8967-6.2886-9.8967s-6.2886 4.599-6.2886 9.8967v34.224zm18.777 12.997v-9.6006h-12.577v9.6006zm0-12.997v-34.224c0-5.2977-5.0459-9.8967-6.2886-9.8967s-6.2886 4.599-6.2886 9.8967v34.224zm-37.553 12.997v-9.6006h-12.577v9.6006zm0-12.997v-34.224c0-5.2977-5.0459-9.8967-6.2886-9.8967s-6.2886 4.599-6.2886 9.8967v34.224z" fill="WHITE" scaleX="0.6" scaleY="0.6" />
+                        <Label fx:id="dpsRankLabel" text="4137" textFill="WHITE">
+                           <graphic>
+                              <ImageView fx:id="dpsRankImage" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="20.0">
+                                 <image>
+                                    <Image url="https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-GrandmasterTier.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Koverwatch" size="45.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" minWidth="215.0" spacing="10.0" style="-fx-background-color: #161E31; -fx-background-radius: 15;" GridPane.columnIndex="2">
+                     <children>
+                        <SVGPath content="m40.777 54.38c0 1.8962-1.6187 4.3473-3.6536 4.3473h-13.922c-2.0349 0-3.6536-2.4511-3.6536-4.3473v-13.597h-13.597c-1.8962 0-4.3473-1.6187-4.3473-3.6536v-13.922c0-2.0349 2.4511-3.6536 4.3473-3.6536h13.597v-13.597c0-1.8962 1.6187-4.3473 3.6536-4.3473h13.922c2.0349 0 3.6536 2.4511 3.6536 4.3473v13.597h13.597c1.8962 0 4.3473 1.6187 4.3473 3.6536v13.922c0 2.0349-2.4511 3.6536-4.3473 3.6536h-13.597z" fill="WHITE" scaleX="0.6" scaleY="0.6" />
+                        <Label fx:id="supportRankLabel" text="3918" textFill="WHITE">
+                           <graphic>
+                              <ImageView fx:id="supportRankImage" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="20.0">
+                                 <image>
+                                    <Image url="https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-MasterTier.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Koverwatch" size="45.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="-20.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </right>
+         <center>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="tagCopyLabel" text="Copied!" textFill="WHITE" visible="false">
+                           <VBox.margin>
+                              <Insets top="-17.6" />
+                           </VBox.margin>
+                        </Label>
+                        <Button minWidth="107.0" mnemonicParsing="false" onAction="#copyTag" prefWidth="107.0" style="-fx-background-color: #161E31;" text="BattleTag" textFill="#d0d2d6">
+                           <graphic>
+                              <SVGPath content="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z&#10;M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" fill="#d0d2d6" />
+                           </graphic>
+                           <font>
+                              <Font name="Koverwatch" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="emailCopyLabel" text="Copied!" textFill="WHITE" visible="false">
+                           <VBox.margin>
+                              <Insets top="-17.6" />
+                           </VBox.margin>
+                        </Label>
+                        <Button minWidth="79.0" mnemonicParsing="false" onAction="#copyEmail" prefWidth="79.0" style="-fx-background-color: #161E31;" text="EMAIL" textFill="#d0d2d6">
+                           <graphic>
+                              <SVGPath content="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z&#10;M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" fill="#d0d2d6" />
+                           </graphic>
+                           <font>
+                              <Font name="Koverwatch" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="-20.0" />
+               </BorderPane.margin>
+            </HBox>
+         </center>
+      </BorderPane>
+      <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#deleteAccount" scaleX="2.0" scaleY="2.0" scaleZ="2.0" style="-fx-background-color: TRANSPARENT;" text="Button">
+         <graphic>
+            <SVGPath content="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" fill="#d0d2d6" />
+         </graphic>
+         <HBox.margin>
+            <Insets left="10.0" top="-20.0" />
+         </HBox.margin>
+      </Button>
+   </children>
+   <padding>
+      <Insets right="20.0" top="20.0" />
+   </padding>
+   <effect>
+      <DropShadow height="24.0" offsetY="4.0" radius="11.5" spread="0.5" width="24.0">
+         <color>
+            <Color opacity="0.20000000298023224" />
+         </color>
+      </DropShadow>
+   </effect>
+</HBox>
