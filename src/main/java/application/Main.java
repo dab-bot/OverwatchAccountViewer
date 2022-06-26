@@ -25,7 +25,9 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-		Font.loadFont(getClass().getResourceAsStream("/fonts/KOverwatch/koverwatch.ttf"),16);
+		Font.loadFont(getClass().getResourceAsStream("/fonts/KOverwatch/koverwatch.ttf"),26);
+		Font.loadFont(getClass().getResourceAsStream("/fonts/KOverwatch/koverwatch.ttf"),45);
+		Font.loadFont(getClass().getResourceAsStream("/fonts/KOverwatch/koverwatch.ttf"),20);
 		stg = primaryStage;
 		System.setProperty("prism.lcdtext", "false");
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/FXML/MainMenu.fxml"));

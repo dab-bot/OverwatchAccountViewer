@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<HBox alignment="CENTER_LEFT" maxHeight="90.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="1695.0" style="-fx-background-color: #283046; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AccountRowController">
+<HBox alignment="CENTER_LEFT" maxHeight="90.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="1695.0" style="-fx-background-color: #283046; -fx-background-radius: 15;" stylesheets="@../CSS/accountRow.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AccountRowController">
    <children>
       <Label fx:id="levelTrackLabel" cacheShape="false" centerShape="false" contentDisplay="GRAPHIC_ONLY" disable="true" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" scaleShape="false" text="1234" visible="false">
          <font>
@@ -33,7 +33,7 @@
             </ImageView>
             <Label fx:id="levelLabel" text="77" textFill="#d0d2d6">
                <font>
-                  <Font name="Koverwatch" size="26.0" />
+                  <Font name="Segoe UI Semibold" size="18.0" />
                </font>
             </Label>
          </children>
@@ -43,7 +43,7 @@
       </StackPane>
       <Label fx:id="battleTagLabel" graphicTextGap="10.0" prefHeight="60.0" prefWidth="447.0" text="ŞŢĮĶĮŞÞŲMƐ69#1219" textFill="#d0d2d6" HBox.hgrow="ALWAYS">
          <font>
-            <Font name="Koverwatch" size="44.0" />
+            <Font name="Segoe UI Semibold" size="30.0" />
          </font>
          <graphic>
             <ImageView fx:id="portraitImage" fitHeight="80.0" fitWidth="80.0">
@@ -88,7 +88,7 @@
                               </ImageView>
                            </graphic>
                            <font>
-                              <Font name="Koverwatch" size="45.0" />
+                              <Font name="Segoe UI Semibold" size="39.0" />
                            </font>
                         </Label>
                      </children>
@@ -114,7 +114,7 @@
                               </ImageView>
                            </graphic>
                            <font>
-                              <Font name="Koverwatch" size="45.0" />
+                              <Font name="Segoe UI Semibold" size="39.0" />
                            </font>
                         </Label>
                      </children>
@@ -140,7 +140,7 @@
                               </ImageView>
                            </graphic>
                            <font>
-                              <Font name="Koverwatch" size="45.0" />
+                              <Font name="Segoe UI Semibold" size="39.0" />
                            </font>
                         </Label>
                      </children>
@@ -167,12 +167,12 @@
                               <Insets top="-17.6" />
                            </VBox.margin>
                         </Label>
-                        <Button minWidth="107.0" mnemonicParsing="false" onAction="#copyTag" prefWidth="107.0" style="-fx-background-color: #161E31;" text="BattleTag" textFill="#d0d2d6">
+                        <Button minWidth="107.0" mnemonicParsing="false" onAction="#copyTag" prefWidth="107.0" style="-fx-background-color: #161E31;" text="BATTLETAG" textFill="#d0d2d6">
                            <graphic>
                               <SVGPath content="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z&#10;M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" fill="#d0d2d6" />
                            </graphic>
                            <font>
-                              <Font name="Koverwatch" size="20.0" />
+                              <Font name="Segoe UI Semibold" size="13.0" />
                            </font>
                         </Button>
                      </children>
@@ -189,7 +189,7 @@
                               <SVGPath content="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z&#10;M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" fill="#d0d2d6" />
                            </graphic>
                            <font>
-                              <Font name="Koverwatch" size="20.0" />
+                              <Font name="Segoe UI Semibold" size="13.0" />
                            </font>
                         </Button>
                      </children>

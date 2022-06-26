@@ -59,6 +59,7 @@ public class MainMenuController extends Controller {
     private Dialog<Object> dialog;
     private ObservableList<HBox> rows= FXCollections.observableArrayList();
     private int threadCount,expectedThreadCount;
+    private boolean loadingAccounts = false;
 
     public void setMain(Main main) {
         this.main = main;
@@ -89,58 +90,64 @@ public class MainMenuController extends Controller {
     }
 
     public void loadAccounts(){
-        ObservableList<String> battleTags = FXCollections.observableArrayList();
-        ObservableList<String> emails = FXCollections.observableArrayList();
-        String sql = null;
-        sql = "SELECT * FROM accounts";
-        try {
-            preparedStatement = con.prepareStatement(sql);
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                battleTags.add(resultSet.getString("BattleTag"));
-                if(resultSet.getString("Email")!=null){
-                    emails.add(resultSet.getString("Email"));
-                }else{
-                    emails.add("");
+        if(!loadingAccounts){
+            ObservableList<String> battleTags = FXCollections.observableArrayList();
+            ObservableList<String> emails = FXCollections.observableArrayList();
+            String sql = null;
+            sql = "SELECT * FROM accounts";
+            try {
+                preparedStatement = con.prepareStatement(sql);
+                resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    battleTags.add(resultSet.getString("BattleTag"));
+                    if(resultSet.getString("Email")!=null){
+                        emails.add(resultSet.getString("Email"));
+                    }else{
+                        emails.add("");
+                    }
                 }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            expectedThreadCount=battleTags.size();
+            threadCount=0;
+            loadingAccounts = true;
+            rows.clear();
+            for(int i = 0;i<battleTags.size();i++)
+                addAccountRow(battleTags.get(i),emails.get(i));
         }
-        expectedThreadCount=battleTags.size();
-        threadCount=0;
-        rows.clear();
-        for(int i = 0;i<battleTags.size();i++)
-            addAccountRow(battleTags.get(i),emails.get(i));
     }
 
     public void addAccount(){
-        TextInputDialog td = new TextInputDialog();
-        td.setTitle("Add battletag");
-        td.setContentText("Enter in the account battletag here");
-        td.setHeaderText(null);
-        Optional<String> result = td.showAndWait();
-        String battleTag = td.getEditor().getText();
-        if (result.isPresent()) {
-            td = new TextInputDialog();
-            td.setTitle("Add Email");
-            td.setContentText("Enter in the email for the account: " + battleTag);
+        if(!loadingAccounts){
+            TextInputDialog td = new TextInputDialog();
+            td.setTitle("Add battletag");
+            td.setContentText("Enter in the account battletag here");
             td.setHeaderText(null);
-            result = td.showAndWait();
-            if(result.isPresent()){
-                String email = td.getEditor().getText();
-                String sql = "INSERT INTO accounts(BattleTag,Email) VALUES(?,?)";
-                try {
-                    preparedStatement = con.prepareStatement(sql);
-                    preparedStatement.setString(1, battleTag);
-                    preparedStatement.setString(2, email);
-                    preparedStatement.executeUpdate();
-                } catch (SQLException ex) {
-                    System.err.println(ex.getMessage());
+            Optional<String> result = td.showAndWait();
+            String battleTag = td.getEditor().getText();
+            if (result.isPresent()) {
+                td = new TextInputDialog();
+                td.setTitle("Add Email");
+                td.setContentText("Enter in the email for the account: " + battleTag);
+                td.setHeaderText(null);
+                result = td.showAndWait();
+                if(result.isPresent()){
+                    String email = td.getEditor().getText();
+                    String sql = "INSERT INTO accounts(BattleTag,Email) VALUES(?,?)";
+                    try {
+                        preparedStatement = con.prepareStatement(sql);
+                        preparedStatement.setString(1, battleTag);
+                        preparedStatement.setString(2, email);
+                        preparedStatement.executeUpdate();
+                    } catch (SQLException ex) {
+                        System.err.println(ex.getMessage());
+                    }
+                    expectedThreadCount = 1;
+                    threadCount = 0;
+                    loadingAccounts =true;
+                    addAccountRow(battleTag,email);
                 }
-                expectedThreadCount = 1;
-                threadCount = 0;
-                addAccountRow(battleTag,email);
             }
         }
         }
@@ -179,6 +186,7 @@ public class MainMenuController extends Controller {
                     rows.sort(comparator);
                     accountRowContainer.getChildren().clear();
                     accountRowContainer.getChildren().setAll(rows);
+                    loadingAccounts=false;
                     progressIndicator.setVisible(false);
                 }
             });
