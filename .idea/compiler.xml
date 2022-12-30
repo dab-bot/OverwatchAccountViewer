@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="OverwatchAccountViewer" target="17" />
+      <module name="OverwatchAccountViewer" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
