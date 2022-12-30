@@ -1,68 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: #161E31;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainMenuController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="863.0" style="-fx-background-color: #161E31; -fx-background-radius: 10;" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainMenuController">
    <children>
       <BorderPane fx:id="contentPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <StackPane.margin>
             <Insets top="60.0" />
          </StackPane.margin>
-         <top>
-            <BorderPane BorderPane.alignment="TOP_CENTER">
-               <left>
-                  <MFXButton graphicTextGap="15.0" onAction="#addAccount" style="-fx-background-color: #283046;" text="Add Account" textFill="#c5c8cc" BorderPane.alignment="CENTER">
-                     <graphic>
-                        <SVGPath content="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z&#10;M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" fill="#c5c8cc" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
-                     </graphic>
-                     <BorderPane.margin>
-                        <Insets left="15.0" />
-                     </BorderPane.margin>
-                     <padding>
-                        <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
-                     </padding>
-                  </MFXButton>
-               </left>
-               <right>
-                  <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" onAction="#loadAccounts" rippleAnimateShadow="true" style="-fx-background-color: TRANSPARENT;" text="Refresh List" textFill="#c5c8cc" BorderPane.alignment="CENTER">
-                     <graphic>
-                        <SVGPath content="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z&#10;M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z&#10;" fill="#c5c8cc" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
-                     </graphic>
-                     <padding>
-                        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
-                     </padding>
-                  </MFXButton>
-               </right>
-               <BorderPane.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </BorderPane.margin>
-               <center>
-                  <ProgressIndicator fx:id="progressIndicator" BorderPane.alignment="CENTER" />
-               </center>
-            </BorderPane>
-         </top>
          <center>
-            <MFXScrollPane fx:id="accountScroll" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: TRANSPARENT;" BorderPane.alignment="CENTER">
-               <content>
-                  <VBox fx:id="accountRowContainer" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                  </VBox>
-               </content>
+            <MFXScrollPane fx:id="accountScroll" fitToWidth="true" hbarPolicy="NEVER" prefHeight="706.0" prefWidth="1092.0" style="-fx-background-color: TRANSPARENT;" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets right="20.0" />
+                  <Insets />
                </BorderPane.margin>
+               <content>
+                  <GridPane alignment="TOP_CENTER" hgap="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox fx:id="accountRowContainer" alignment="TOP_CENTER" spacing="20.0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <MFXButton graphicTextGap="10.0" maxWidth="1.7976931348623157E308" text="Beginner Out Of Stock Search">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" text="Fast Sales Search">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="93.0" maxWidth="1.7976931348623157E308" text="Mega Value Search">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" text="Olivias General Flipping Quick Sell">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="156.0" maxWidth="1.7976931348623157E308" text="Olivias Furnishing Items Quick Sell">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="282.0" maxWidth="1.7976931348623157E308" text="Olivias Furnishing Items Medium Sell">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" text="Olivias Glamor Medium Sell">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="156.0" maxWidth="1.7976931348623157E308" text="Olivias High Investment Collectable Items">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="282.0" maxWidth="1.7976931348623157E308" text="Olivias High Value Materials">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="accountRowContainer1" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                           <padding>
+                              <Insets bottom="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" text="Low Quality Out of Stock Search">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" text="Commodities Search">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="156.0" maxWidth="1.7976931348623157E308" text="NPC Vendor Item Search">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="93.0" maxWidth="1.7976931348623157E308" text="Olivias Class Quest Items Quick Sell">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="219.0" maxWidth="1.7976931348623157E308" text="Olivias Minions, Mounts, and Collectable Items Quick Sell">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="345.0" maxWidth="1.7976931348623157E308" text="Olivias Consumable Collectables Medium Sell">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="93.0" maxWidth="1.7976931348623157E308" text="Olivias High Investment Furniture Items">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton graphicTextGap="10.0" layoutX="30.0" layoutY="219.0" maxWidth="1.7976931348623157E308" text="Olivias High Value Glamor Items">
+                                 <graphic>
+                                    <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </MFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </GridPane>
+               </content>
             </MFXScrollPane>
          </center>
       </BorderPane>
-      <BorderPane fx:id="topPane" maxHeight="60.0" prefHeight="60.0" prefWidth="1200.0" style="-fx-background-color: #283046;" StackPane.alignment="TOP_CENTER">
+      <BorderPane fx:id="topPane" maxHeight="60.0" prefHeight="60.0" prefWidth="1200.0" style="-fx-background-color: #283046; -fx-background-radius: 10;" StackPane.alignment="TOP_CENTER">
          <padding>
             <Insets left="15.0" />
          </padding>

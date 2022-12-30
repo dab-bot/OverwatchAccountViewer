@@ -48,8 +48,6 @@ public class MainMenuController extends Controller {
     private VBox accountRowContainer;
     @FXML
     private MFXScrollPane accountScroll;
-    @FXML
-    private ProgressIndicator progressIndicator;
 
     private Connection con = null;
     PreparedStatement preparedStatement = null;
@@ -153,7 +151,7 @@ public class MainMenuController extends Controller {
         }
 
         public void addAccountRow(String battleTag,String email){
-            progressIndicator.setVisible(true);
+//            progressIndicator.setVisible(true);
             MainMenuController me = this;
             Task<HBox> task = new Task<HBox>() {
                 @Override
@@ -175,7 +173,7 @@ public class MainMenuController extends Controller {
                         return accountRow;
                 }
             };
-            progressIndicator.progressProperty().bind(task.progressProperty());
+//            progressIndicator.progressProperty().bind(task.progressProperty());
             task.setOnSucceeded(evt -> {
                 if(threadCount<expectedThreadCount-1){
                     rows.add(task.getValue());
@@ -187,7 +185,6 @@ public class MainMenuController extends Controller {
                     accountRowContainer.getChildren().clear();
                     accountRowContainer.getChildren().setAll(rows);
                     loadingAccounts=false;
-                    progressIndicator.setVisible(false);
                 }
             });
             new Thread(task).start();

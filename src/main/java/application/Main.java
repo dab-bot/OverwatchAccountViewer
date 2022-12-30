@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -21,7 +22,7 @@ public class Main extends Application {
 	private Connection con;
 	public Controller c;
 	private static BorderlessScene bs;
-	private Image icon = new Image(getClass().getResourceAsStream("/images/PngItem_348433.png"));
+	private Image icon = new Image(getClass().getResourceAsStream("/images/img.png"));
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
@@ -41,9 +42,11 @@ public class Main extends Application {
 		bs.removeDefaultCSS();
 		primaryStage.setScene(bs);
 		primaryStage.getIcons().add(icon);
+		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		primaryStage.show();
 		bs.maximizeStage();
 //		stg.setMinWidth(600);
+		bs.setFill(Color.TRANSPARENT);
 		bs.setResizable(true);
 		c.fill();
 	}
