@@ -1,3 +1,6 @@
+># Please note this repository is no longer supported since early 2022 and has been moved to "Archived" mode, thank you for your understanding
+
+
 # OverwatchAccountViewer
 Portable Java Application for automatic tracking of overwatch accounts
 
